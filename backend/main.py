@@ -21,8 +21,8 @@ app.add_middleware(
 
 MONGO_URL = os.getenv("MONGO_URL", "mongodb://localhost:27017")
 client = AsyncIOMotorClient(MONGO_URL)
-db = client.notes_db
-notes_collection = db.notes
+db = client["mobile-recharge-db"]
+notes_collection = db["note_making"]
 
 class NoteModel(BaseModel):
     title: str = Field(...)
