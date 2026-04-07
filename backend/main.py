@@ -5,6 +5,9 @@ from pydantic import BaseModel, Field
 from typing import List, Optional
 from datetime import datetime
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI(title="Note Taking App")
 

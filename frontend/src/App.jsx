@@ -4,7 +4,7 @@ import moment from 'moment';
 import { Plus, Edit2, Trash2, BookOpen, X } from 'lucide-react';
 import './index.css';
 
-const API_URL = 'http://localhost:8000/notes/';
+const API_URL = import.meta.env.PROD ? '/_/backend/notes/' : 'http://localhost:8000/notes/';
 
 function App() {
   const [notes, setNotes] = useState([]);
