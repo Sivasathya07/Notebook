@@ -121,3 +121,10 @@ async def delete_note(id: str):
         return {"status": "Successfully deleted note"}
 
     raise HTTPException(status_code=404, detail="Note not found")
+
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    print(f"Starting server on port {port}...")
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
